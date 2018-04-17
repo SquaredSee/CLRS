@@ -5,7 +5,7 @@ from math import floor
 
 def merge(A, l, m, r):
     # l is the beginning of the first sub array
-    # m is the end of the first sub array, q+1 is the beginning of the second
+    # m is the end of the first sub array, m+1 is the beginning of the second
     # r is the end of the second sub array
     # n = r - l + 1 where n is the total number of items in the sub array
 
