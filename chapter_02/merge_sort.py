@@ -11,7 +11,6 @@ def merge(A, l, m, r):
 
     # copy into left and right sub arrays
     # python string slicing has the first number included, last number excluded
-
     L = A[l:m + 1]
     R = A[m + 1:r + 1]
 
@@ -19,6 +18,7 @@ def merge(A, l, m, r):
     j = 0
     k = l
     while i < len(L) and j < len(R):
+        # iterate over left and right sub arrays, adding the smallest to the next index
         if L[i] < R[j]:
             A[k] = L[i]
             i += 1
@@ -27,11 +27,11 @@ def merge(A, l, m, r):
             j += 1
         k += 1
 
+    # copy remaining items over, only one of the below cases will occur per merge
     while i < len(L):
         A[k] = L[i]
         i += 1
         k += 1
-
     while j < len(R):
         A[k] = R[j]
         j += 1
@@ -39,6 +39,7 @@ def merge(A, l, m, r):
 
 
 def merge_sort(A, l, r):
+    # recursively go to smaller sub arrays until they are one item in length
     if l < r:
         m = floor((l + r) / 2)
         merge_sort(A, l, m)
@@ -54,3 +55,4 @@ if __name__ == '__main__':
         sys.exit('Usage: insertion_sort.py [1,2,3,4]')
     input_list = input_list.strip('[]').split(',')
     merge_sort(input_list, 0, len(input_list) - 1)
+    print(input_list)
