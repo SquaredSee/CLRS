@@ -4,10 +4,10 @@ from math import floor
 
 
 def merge(A, l, m, r):
-    # p is the beginning of the first sub array
-    # q is the end of the first sub array, q+1 is the beginning of the second
+    # l is the beginning of the first sub array
+    # m is the end of the first sub array, q+1 is the beginning of the second
     # r is the end of the second sub array
-    # n = r - p + 1 where n is the total number of items in the sub array
+    # n = r - l + 1 where n is the total number of items in the sub array
 
     # copy into left and right sub arrays
     # python string slicing has the first number included, last number excluded
