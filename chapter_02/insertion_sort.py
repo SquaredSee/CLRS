@@ -2,6 +2,7 @@
 
 
 def insertion_sort(A):
+    """ iterates through the array one item at a time, placing in the correct location """
     if type(A) is not list:
         raise TypeError('provided input is not a list')
 

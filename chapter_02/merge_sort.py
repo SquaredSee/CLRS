@@ -4,10 +4,13 @@ from math import floor
 
 
 def merge(A, l, m, r):
-    # l is the beginning of the first sub array
-    # m is the end of the first sub array, m+1 is the beginning of the second
-    # r is the end of the second sub array
-    # n = r - l + 1 where n is the total number of items in the sub array
+    """
+    Merges the subarrays defined by the indicies
+    l is the beginning of the first sub array
+    m is the end of the first sub array, m+1 is the beginning of the second
+    r is the end of the second sub array
+    r - l + 1 is the total number of items in the merged sub array
+    """
 
     # copy into left and right sub arrays
     # python string slicing has the first number included, last number excluded
@@ -39,7 +42,7 @@ def merge(A, l, m, r):
 
 
 def merge_sort(A, l, r):
-    # recursively go to smaller sub arrays until they are one item in length
+    """ recursively go to smaller sub arrays until they are one item in length, then merge """
     if l < r:
         m = floor((l + r) / 2)
         merge_sort(A, l, m)
@@ -52,7 +55,7 @@ if __name__ == '__main__':
     try:
         input_list = sys.argv[1]
     except IndexError:
-        sys.exit('Usage: insertion_sort.py [1,2,3,4]')
+        sys.exit('Usage: merge_sort.py [1,2,3,4]')
     input_list = input_list.strip('[]').split(',')
     merge_sort(input_list, 0, len(input_list) - 1)
     print(input_list)
